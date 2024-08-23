@@ -57,31 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     }
   
-    function loadGoogleAds() {
-      var script = document.createElement('script');
-      script.src = "https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"; // Reemplaza con tu ID de Google Ads
-      script.async = true;
-      document.head.appendChild(script);
-      script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-CONVERSION_ID'); // Reemplaza con tu ID de Google Ads
-      };
-    }
-  
-    function loadFacebookAds() {
-      var script = document.createElement('script');
-      script.src = "https://connect.facebook.net/en_US/fbevents.js";
-      script.async = true;
-      document.head.appendChild(script);
-      script.onload = function() {
-        fbq('init', 'FACEBOOK_PIXEL_ID'); // Reemplaza con tu ID de Facebook Pixel
-        fbq('track', 'PageView');
-      };
-    }
-  
-
+   
   
     function setConsent(consent) {
       localStorage.setItem('cookieConsent', JSON.stringify(consent));
