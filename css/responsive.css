@@ -1,0 +1,263 @@
+/* responsive en preparacion*/
+@media (max-width: 768px) {
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    #header {
+      width: auto;
+    }
+    #header .headerFixed {
+      width: 100%;
+    }
+    #header #nav {
+      max-width: 992px;
+      /* fin menu */
+    }
+    #header #nav .nav-menu {
+      display: flex;
+      flex-direction: column;
+      background-color: #d8d8d8;
+      align-items: center;
+      padding: 0;
+      z-index: 21;
+      position: fixed;
+      left: 100%;
+      top: 9rem;
+      width: 100%;
+      height: calc(100% - 3rem);
+      overflow-y: auto;
+      transition: left 300ms;
+    }
+    #header #nav .nav-menu .nav-item {
+      line-height: 4rem;
+    }
+    #header #nav .nav-link:hover {
+      background-color: none;
+    }
+    #header #nav .nav-toggle {
+      display: block;
+    }
+    #header #nav .nav-toggle .icon {
+      display: block;
+    }
+    #header #nav .nav-menu_visible {
+      left: 0;
+    }
+    #header #nav > ul {
+      color: black;
+      background-color: none;
+    }
+    #header #nav > ul > li:hover > ul {
+      margin-left: 7.5rem !important;
+    }
+    #header #nav > ul > li:hover > ul > li:hover {
+      box-shadow: 0px 0px 6px white inset;
+    }
+    /* registrarse */
+    .subtitleHeader {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.514);
+      box-shadow: 0px 0px 4px #ccc;
+    }
+    /* inicio banner */
+    #sectionWeare {
+      display: none;
+    }
+    /* fin banner */
+    /* inicio txt pre section */
+    .preStyle {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      padding: 5rem 0rem 0rem 1.5rem;
+      margin: 0;
+      height: 10rem;
+    }
+    .preStyle h2 {
+      font-size: 3.5rem;
+    }
+    .preStyle h3 {
+      width: 65%;
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    /* fin txt pre section */
+    /* inicio row styles */
+    #stylesFrode {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 0.8rem;
+      column-gap: 0px;
+      width: 100%;
+      padding: 0;
+      height: 70rem;
+      overflow: none;
+      margin: 0rem;
+    }
+    #stylesFrode .firstRow {
+      padding-left: 0;
+    }
+    #stylesFrode .firstRow img {
+      width: 25rem;
+    }
+    #stylesFrode .firstRow h2 {
+      margin-left: 0;
+    }
+    #stylesFrode .secondRow {
+      padding-left: 0;
+    }
+    #stylesFrode .secondRow img {
+      width: 25rem;
+    }
+    #stylesFrode .secondRow h2 {
+      margin-left: 0;
+    }
+    /* fin row styles */
+    /* inicio layout marcas */
+    #rowMarcas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 0.8rem;
+      width: 100%;
+      height: 55rem;
+      margin: 0;
+      padding: 0;
+    }
+    #rowMarcas .title {
+      display: none;
+    }
+    #rowMarcas .firstNike .relative {
+      padding-left: 0;
+    }
+    #rowMarcas .firstNike .relative img {
+      width: 25rem;
+    }
+    #rowMarcas .firstAdi .relative {
+      padding-left: 0;
+    }
+    #rowMarcas .firstAdi .relative img {
+      width: 25rem;
+    }
+    /* inicio layout niños */
+    #rowKids {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 0.8rem;
+      padding: 0rem;
+      width: 100%;
+      height: 65rem;
+      margin: 0;
+    }
+    #rowKids .firstKids {
+      padding-left: 0;
+    }
+    #rowKids .firstKids img {
+      width: 25rem;
+    }
+    #rowKids .secondKids {
+      padding-left: 0;
+    }
+    #rowKids .secondKids img {
+      width: 25rem;
+    }
+    /* fin layout niños */
+    /* inicio layout hombres */
+    #sectionMens {
+      height: 55rem;
+      margin: 0;
+    }
+    #sectionMens .menLayout {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.8rem;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #sectionMens .menLayout .firstRow {
+      padding-left: 0rem;
+    }
+    #sectionMens .menLayout .firstRow img {
+      width: 25rem;
+    }
+    #sectionMens .menLayout .secondRow {
+      padding-left: 0rem;
+    }
+    #sectionMens .menLayout .secondRow img {
+      width: 25rem;
+    }
+    /* fin layout hombres */
+    /* carousel bootstrap */
+    #container-carousel {
+      height: 40rem;
+      margin: 10rem 0rem 0.2rem 0rem;
+    }
+    #container-carousel .titleCarousel h2 {
+      text-align: center;
+    }
+    #container-carousel #carouselExampleControls .carousel-inner {
+      margin-left: 10%;
+    }
+    /* fin carousel bootstrap */
+    /* inicio para quien queres comprar */
+    #comprar {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      height: 50rem;
+      margin-bottom: 0.2rem;
+    }
+    #comprar .containerText {
+      display: none;
+    }
+    #comprar .containerPhotos {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      gap: 0;
+      row-gap: 1rem;
+    }
+    /* fin para quien queres comprar */
+    /* inicio tabla descuentos */
+    #containerPagos {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      margin-bottom: 0.2rem;
+    }
+    #containerPagos .tabla__descuentos {
+      width: 85%;
+    }
+    /* fin tabla descuentos */
+    /* inicio formulario */
+    .containerForm {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 0.2rem !important;
+    }
+    .containerForm #formulario {
+      height: 30rem;
+    }
+    /* fin formulario */
+    /* footer */
+    footer .firstColumn .fortyRow .btnTitle h2 {
+      display: none;
+    }
+    footer .firstColumn .fortyRow ul {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    footer .secondColumn .secondRow {
+      display: none;
+    }
+    /* fin footer */
+  }
+  
+  /* fin responsive */
