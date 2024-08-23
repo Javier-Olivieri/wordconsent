@@ -36,7 +36,7 @@
     margin-bottom: 10px;
   }
   .cookie-consent-banner {
-    display: none; /* Oculto por defecto */
+
     position: fixed;
     top: 50%;
     left: 50%;
