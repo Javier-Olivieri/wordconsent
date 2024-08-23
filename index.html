@@ -41,131 +41,132 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WGDK3KGZ');</script>
     <!-- End Google Tag Manager -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var banner = document.getElementById("cookie-consent-banner");
-        var modal = document.getElementById("cookie-preferences-modal");
-        var closeModal = document.querySelector(".modal .close");
-        var savePreferencesButton = document.getElementById("save-preferences");
-        var allowAllCookiesButton = document.getElementById("allow-all-cookies");
-        var denyAllCookiesButton = document.getElementById("deny-all-cookies");
-        var choosePreferencesButton = document.getElementById("choose-preferences");
-      
-        function showBanner() {
-          banner.style.display = "block";
-        }
-      
-        function hideBanner() {
-          banner.style.display = "none";
-        }
-      
-        function showModal() {
-          modal.style.display = "block";
-        }
-      
-        function hideModal() {
-          modal.style.display = "none";
-        }
-      
-        function loadScriptsBasedOnConsent(consent) {
-          if (consent.analytics_storage) {
-            loadGoogleAnalytics();
-          }
-          if (consent.ad_storage) {
-            loadGoogleAnalytics();
-          }
-          if (consent.ad_user_data) {
-            loadGoogleAnalytics();
-          }
-          if (consent.ad_personalization) {
-            loadGoogleAnalytics();
-          }
-          if (consent.functionality_storage) {
-            loadGoogleAnalytics();
-          }
-          if (consent.personalization_storage) {
-            loadGoogleAnalytics();
-          }
-        }
-      
-        function loadGoogleAnalytics() {
-          var script = document.createElement('script');
-          script.src = "https://www.googletagmanager.com/gtag/js?id=G-KMDRNGZ9LR";
-          script.async = true;
-          document.head.appendChild(script);
-          script.onload = function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KMDRNGZ9LR');
-          };
-        }
-      
-       
-      
-        function setConsent(consent) {
-          localStorage.setItem('cookieConsent', JSON.stringify(consent));
-          hideBanner();
-          hideModal();
-          loadScriptsBasedOnConsent(consent);
-        }
-      
-        // Mostrar banner si el consentimiento no está guardado
-        if (!localStorage.getItem('cookieConsent')) {
-          showBanner();
-        }
-      
-        allowAllCookiesButton.addEventListener('click', function() {
-          setConsent({
-            analytics_storage: true,
-            ad_storage: true,
-            ad_user_data: true,
-            ad_personalization: true,
-            functionality_storage: true,
-            personalization_storage: true,
-            security_storage: true
-          });
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var banner = document.getElementById("cookie-consent-banner");
+            var modal = document.getElementById("cookie-preferences-modal");
+            var closeModal = document.querySelector(".modal .close");
+            var savePreferencesButton = document.getElementById("save-preferences");
+            var allowAllCookiesButton = document.getElementById("allow-all-cookies");
+            var denyAllCookiesButton = document.getElementById("deny-all-cookies");
+            var choosePreferencesButton = document.getElementById("choose-preferences");
+        
+            function showBanner() {
+                banner.style.display = "block";
+            }
+        
+            function hideBanner() {
+                banner.style.display = "none";
+            }
+        
+            function showModal() {
+                modal.style.display = "block";
+            }
+        
+            function hideModal() {
+                modal.style.display = "none";
+            }
+        
+            function loadScriptsBasedOnConsent(consent) {
+                if (consent.analytics_storage) {
+                    loadGoogleAnalytics();
+                }
+                // Agrega otros scripts según el consentimiento
+            }
+        
+            function loadGoogleAnalytics() {
+                var script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-KMDRNGZ9LR";
+                script.async = true;
+                document.head.appendChild(script);
+                script.onload = function() {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-KMDRNGZ9LR');
+                };
+            }
+        
+            function setConsent(consent) {
+                localStorage.setItem('cookieConsent', JSON.stringify(consent));
+                hideBanner();
+                hideModal();
+                gtag('consent', 'update', consent);
+                loadScriptsBasedOnConsent(consent);
+            }
+        
+            // Mostrar configuración predeterminada en GTM
+            function setDefaultConsent() {
+                var defaultConsent = {
+                    analytics_storage: false,
+                    ad_storage: false,
+                    ad_user_data: false,
+                    ad_personalization: false,
+                    functionality_storage: false,
+                    personalization_storage: false,
+                    security_storage: true // Asumido como necesario
+                };
+                gtag('consent', 'default', defaultConsent);
+            }
+        
+            // Mostrar banner si el consentimiento no está guardado
+            if (!localStorage.getItem('cookieConsent')) {
+                showBanner();
+                setDefaultConsent();  // Configurar consentimiento predeterminado
+            }
+        
+            allowAllCookiesButton.addEventListener('click', function() {
+                setConsent({
+                    analytics_storage: true,
+                    ad_storage: true,
+                    ad_user_data: true,
+                    ad_personalization: true,
+                    functionality_storage: true,
+                    personalization_storage: true,
+                    security_storage: true
+                });
+            });
+        
+            denyAllCookiesButton.addEventListener('click', function() {
+                setConsent({
+                    analytics_storage: false,
+                    ad_storage: false,
+                    ad_user_data: false,
+                    ad_personalization: false,
+                    functionality_storage: false,
+                    personalization_storage: false,
+                    security_storage: true
+                });
+            });
+        
+            choosePreferencesButton.addEventListener('click', function() {
+                showModal();
+            });
+        
+            closeModal.addEventListener('click', function() {
+                hideModal();
+            });
+        
+            savePreferencesButton.addEventListener('click', function() {
+                var consentCategories = {
+                    analytics_storage: document.querySelector('input[name="analytics_storage"]').checked,
+                    ad_storage: document.querySelector('input[name="ad_storage"]').checked,
+                    ad_user_data: document.querySelector('input[name="ad_user_data"]').checked,
+                    ad_personalization: document.querySelector('input[name="ad_personalization"]').checked,
+                    functionality_storage: document.querySelector('input[name="functionality_storage"]').checked,
+                    personalization_storage: document.querySelector('input[name="personalization_storage"]').checked,
+                    security_storage: true // Asumido como necesario
+                };
+        
+                setConsent(consentCategories);
+            });
+        
+            // Cargar scripts si ya se ha dado consentimiento
+            var storedConsent = JSON.parse(localStorage.getItem('cookieConsent') || '{}');
+            loadScriptsBasedOnConsent(storedConsent);
         });
-      
-        denyAllCookiesButton.addEventListener('click', function() {
-          setConsent({
-            analytics_storage: false,
-            ad_storage: false,
-            ad_user_data: false,
-            ad_personalization: false,
-            functionality_storage: false,
-            personalization_storage: false,
-            security_storage: true
-          });
-        });
-      
-        choosePreferencesButton.addEventListener('click', function() {
-          showModal();
-        });
-      
-        closeModal.addEventListener('click', function() {
-          hideModal();
-        });
-      
-        savePreferencesButton.addEventListener('click', function() {
-          var consentCategories = {
-            analytics_storage: document.querySelector('input[name="analytics_storage"]').checked,
-            ad_storage: document.querySelector('input[name="ad_storage"]').checked,
-            ad_user_data: document.querySelector('input[name="ad_user_data"]').checked,
-            ad_personalization: document.querySelector('input[name="ad_personalization"]').checked,
-            functionality_storage: document.querySelector('input[name="functionality_storage"]').checked,
-            personalization_storage: document.querySelector('input[name="personalization_storage"]').checked,
-            security_storage: true // Asumido como necesario
-          };
-      
-          setConsent(consentCategories);
-        });
-      
-        // Cargar scripts si ya se ha dado consentimiento
-        var storedConsent = JSON.parse(localStorage.getItem('cookieConsent') || '{}');
-        loadScriptsBasedOnConsent(storedConsent);
-      });
- </script>     
+        </script>
+   
 </head>
 
 <body>
