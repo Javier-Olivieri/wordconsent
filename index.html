@@ -50,62 +50,63 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGDK3KGZ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+<!-- Banner de consentimiento -->
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+    <div class="cookie-consent-content">
+        <p>Este sitio web utiliza cookies para mejorar tu experiencia. Haga clic en "Permitir todas" para aceptar todas las cookies, "Denegar todas" para rechazarlas todas o "Elegir preferencias" para seleccionar las cookies que desea permitir.</p>
+        <button id="allow-all-cookies">Permitir todas</button>
+        <button id="deny-all-cookies">Denegar todas</button>
+        <button id="choose-preferences">Elegir preferencias</button>
+    </div>
+</div>
 
-    <div id="cookie-consent-banner" class="cookie-consent-banner">
-        <div class="cookie-consent-content">
-          <p>Este sitio web utiliza cookies para mejorar tu experiencia. Haga clic en "Permitir todas" para aceptar todas las cookies, "Denegar todas" para rechazarlas todas o "Elegir preferencias" para seleccionar las cookies que desea permitir.</p>
-          <button id="allow-all-cookies">Permitir todas</button>
-          <button id="deny-all-cookies">Denegar todas</button>
-          <button id="choose-preferences">Elegir preferencias</button>
-        </div>
-      </div>
-    
-      <!-- Modal para elegir preferencias -->
-      <div id="cookie-preferences-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Elegir Preferencias de Cookies</h2>
-          <form id="cookie-preferences-form">
+<!-- Modal para elegir preferencias -->
+<div id="cookie-preferences-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Elegir Preferencias de Cookies</h2>
+        <form id="cookie-preferences-form">
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="analytics_storage" />
-                <span>Analítica</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="analytics_storage" />
+                    <span>Analítica</span>
+                </label>
             </div>
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="ad_storage" />
-                <span>Publicidad</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="ad_storage" />
+                    <span>Publicidad</span>
+                </label>
             </div>
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="ad_user_data" />
-                <span>Datos de Usuario para Publicidad</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="ad_user_data" />
+                    <span>Datos de Usuario para Publicidad</span>
+                </label>
             </div>
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="ad_personalization" />
-                <span>Personalización de Publicidad</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="ad_personalization" />
+                    <span>Personalización de Publicidad</span>
+                </label>
             </div>
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="functionality_storage" />
-                <span>Funcionalidad</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="functionality_storage" />
+                    <span>Funcionalidad</span>
+                </label>
             </div>
             <div class="cookie-category">
-              <label>
-                <input type="checkbox" name="personalization_storage" />
-                <span>Personalización</span>
-              </label>
+                <label>
+                    <input type="checkbox" name="personalization_storage" />
+                    <span>Personalización</span>
+                </label>
             </div>
             <button type="button" id="save-preferences">Guardar Preferencias</button>
-          </form>
-        </div>
-      </div>
+        </form>
+    </div>
+</div>
+
     
 
     <header id="header">
