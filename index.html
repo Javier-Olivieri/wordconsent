@@ -33,89 +33,6 @@
 
     <link rel="stylesheet" href="./css/styles.css">
 
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WGDK3KGZ');</script>
-    <!-- End Google Tag Manager -->
-
-<!-- Google tag (gtag.js) -->
-
-</script>
-
-
-
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<script>
-     window.addEventListener("load", function() {
-      var userRegion = 'AR'; // Reemplaza con la lógica para detectar la región del usuario
-
-      var cookieConsentConfig = {
-        palette: {
-          popup: { background: "#000" },
-          button: { background: "#f1d600" }
-        },
-        theme: "classic",
-        position: "bottom-right",
-        type: "opt-in",
-        content: {
-          message: "Este sitio web utiliza cookies para mejorar la experiencia. Haga clic para aceptar todas las cookies, denegarlas todas o elegir sus preferencias.",
-          dismiss: "Aceptar todas",
-          allow: "Permitir cookies",
-          deny: "Denegar todas",
-          link: "Elegir preferencias",
-          href: "/politica-de-cookies"  <!-- Reemplaza con el enlace a tu política de cookies -->
-        },
-        onInitialise: function(status) {
-          if (this.hasConsented()) {
-            window.dataLayer.push({ 'event': 'cookie_consent_granted' });
-          } else {
-            window.dataLayer.push({ 'event': 'cookie_consent_denied' });
-          }
-        },
-        onStatusChange: function(status) {
-          if (status === 'allow') {
-            window.dataLayer.push({ 'event': 'cookie_consent_granted' });
-          } else if (status === 'deny') {
-            window.dataLayer.push({ 'event': 'cookie_consent_denied' });
-          }
-        },
-        cookies: {
-          necessary: {
-            name: 'necessary',
-            description: 'Cookies necesarias para el funcionamiento del sitio web.'
-          },
-          preferences: {
-            name: 'preferences',
-            description: 'Cookies que recuerdan tus preferencias.'
-          },
-          statistics: {
-            name: 'statistics',
-            description: 'Cookies que nos ayudan a entender cómo usas el sitio.'
-          },
-          marketing: {
-            name: 'marketing',
-            description: 'Cookies usadas para marketing y publicidad.'
-          }
-        }
-      };
-
-      // Configuración por región
-      if (userRegion === 'AR') {
-        cookieConsentConfig.content.message = "Este sitio web utiliza cookies para mejorar la experiencia. Haga clic para aceptar todas las cookies, denegarlas todas o elegir sus preferencias.";
-      } else if (userRegion === 'BR') {
-        cookieConsentConfig.content.message = "Este site utiliza cookies para melhorar sua experiência. Clique para aceitar todos os cookies, recusá-los todos ou escolher suas preferências.";
-      } else if (userRegion === 'PY') {
-        cookieConsentConfig.content.message = "Este sitio web utiliza cookies para mejorar la experiencia. Haga clic para aceptar todas las cookies, denegarlas todas o elegir sus preferencias.";
-      }
-
-      window.cookieconsent.initialise(cookieConsentConfig);
-    });
-  </script>
-</script>
 
 
 
@@ -124,10 +41,6 @@
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGDK3KGZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <header id="header">
 
